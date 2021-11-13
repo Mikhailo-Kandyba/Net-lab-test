@@ -1,0 +1,152 @@
+@import "variables";
+@import "mixin";
+
+.footer {
+  background: $dark-grey-two;
+  padding: 42px 0 10px;
+
+  @include breakpoint($tablet) {
+    padding:  30px 0 0;
+  }
+
+  @include breakpoint($mobile) {
+    padding: 20px 0 0;
+  }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $average-grey-two;
+  padding-bottom: 55px;
+
+  @include breakpoint($tablet) {
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+  }
+
+  @include breakpoint($mobile) {
+    padding-bottom: 20PX;
+  }
+}
+
+.text-nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
+
+  @include breakpoint($desktop) {
+    max-width: 790px;
+  }
+
+  @include breakpoint($tablet) {
+    max-width: fit-content;
+    margin-bottom: 20px;
+  }
+
+  @include breakpoint($mobile) {
+    flex-wrap: wrap;
+  }
+}
+
+.text-footer {
+  font-family: 'Cormorant Infant', serif;
+  max-width: 430px;
+
+  @include breakpoint($desktop) {
+    max-width: 430px;
+  }
+
+  @include breakpoint($tablet) {
+    max-width: 420px;
+  }
+
+  @include breakpoint($mobile) {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+    color: $white;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    @include breakpoint($mobile) {
+      font-size: 26px;
+      line-height: 34px;
+    }
+  }
+
+  p {
+    line-height: 24px;
+    color: $white;
+    font-weight: 300;
+    font-style: italic;
+    padding-right: 150px;
+
+    @include breakpoint($tablet) {
+      padding-right: 0;
+    }
+  }
+}
+
+.footer-nav-holder {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 420px;
+  width: 100%;
+
+  @include breakpoint($desktop) {
+    max-width: min-content;
+  }
+}
+
+.footer-navigation {
+  font-family: 'PT Sans', sans-serif;
+  min-width: 315px;
+  line-height: 34px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  li {
+    a {
+      color: $white;
+
+      @include breakpoint($mobile) {
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.holder-socials {
+  max-width: 170px;
+  width: 100%;
+
+  .img-area {
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 90px;
+    }
+  }
+
+  .socials {
+    li {
+      width: 25px;
+    }
+  }
+}
+
+.copyright {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey-two;
+  font-weight: 400;
+  padding: 10px 0;
+}

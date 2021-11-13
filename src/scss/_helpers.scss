@@ -1,0 +1,25 @@
+@import "mixin";
+@import "variables";
+
+.btn_green {
+  background: $green-two;
+  color: $white;
+
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    background: $green;
+  }
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.margin-bottom_30 {
+  margin-bottom: 30px;
+
+  @include breakpoint($mobile) {
+    margin-bottom: 20PX;
+  }
+}
