@@ -3,6 +3,7 @@ $(".btn-menu").on('click', function(e) {
     e.preventDefault();
     $(this).toggleClass("active");
     $(".menu-navigation-wrap").toggleClass('show-menu');
+    $(".header-top").toggleClass('display-none');
     $("body").toggleClass('overflow-hidden');
 });
 

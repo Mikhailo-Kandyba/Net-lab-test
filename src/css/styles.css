@@ -212,10 +212,7 @@ h6 {
     transition: all .25s ease;
     max-width: inherit;
     min-height: 100vh;
-    background: #fff; }
-    .menu-navigation-wrap .header-top {
-      display: block;
-      padding: 5px 10px; } }
+    background: #fff; } }
 
 .menu-navigation-wrap .menu-navigation {
   display: flex;
@@ -232,11 +229,7 @@ h6 {
       padding: 0; } }
   @media only screen and (max-width: 1023px) {
     .menu-navigation-wrap .menu-navigation {
-      display: block;
-      padding: 65px 15px;
-      text-align: center; } }
-  @media only screen and (max-width: 767px) {
-    .menu-navigation-wrap .menu-navigation {
+      flex-direction: column;
       padding: 45px 10px; } }
   .menu-navigation-wrap .menu-navigation li {
     padding: 0 20px; }
@@ -928,3 +921,6 @@ h6 {
 
 .overflow-hidden {
   overflow: hidden; }
+
+.display-none {
+  display: none; }

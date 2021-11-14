@@ -68,11 +68,6 @@
     max-width: inherit;
     min-height: 100vh;
     background: $white;
-
-    .header-top {
-      display: block;
-      padding: 5px 10px;
-    }
   }
 
   .menu-navigation {
@@ -91,12 +86,7 @@
     }
 
     @include breakpoint($tablet) {
-      display: block;
-      padding: 65px 15px;
-      text-align: center;
-    }
-
-    @include breakpoint($mobile) {
+      flex-direction: column;
       padding: 45px 10px;
     }
 
