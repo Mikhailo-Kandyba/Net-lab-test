@@ -55,10 +55,9 @@
 }
 
 .menu-navigation-wrap {
-  @include breakpoint($tablet) {
-    background: $white;
+  .header-top {
+    display: none;
   }
-
   @include breakpoint($tablet) {
     position: fixed;
     z-index: 25;
@@ -68,6 +67,12 @@
     transition: all .25s ease;
     max-width: inherit;
     min-height: 100vh;
+    background: $white;
+
+    .header-top {
+      display: block;
+      padding: 5px 10px;
+    }
   }
 
   .menu-navigation {
@@ -87,11 +92,12 @@
 
     @include breakpoint($tablet) {
       display: block;
-      padding: 20px 40px;
+      padding: 65px 15px;
+      text-align: center;
     }
 
     @include breakpoint($mobile) {
-      padding: 20px 50px 20px 20px;
+      padding: 45px 10px;
     }
 
     li {

@@ -199,9 +199,8 @@ h6 {
     position: relative;
     padding: 25px 0; } }
 
-@media only screen and (max-width: 1023px) {
-  .menu-navigation-wrap {
-    background: #fff; } }
+.menu-navigation-wrap .header-top {
+  display: none; }
 
 @media only screen and (max-width: 1023px) {
   .menu-navigation-wrap {
@@ -212,7 +211,11 @@ h6 {
     width: 100%;
     transition: all .25s ease;
     max-width: inherit;
-    min-height: 100vh; } }
+    min-height: 100vh;
+    background: #fff; }
+    .menu-navigation-wrap .header-top {
+      display: block;
+      padding: 5px 10px; } }
 
 .menu-navigation-wrap .menu-navigation {
   display: flex;
@@ -230,10 +233,11 @@ h6 {
   @media only screen and (max-width: 1023px) {
     .menu-navigation-wrap .menu-navigation {
       display: block;
-      padding: 20px 40px; } }
+      padding: 65px 15px;
+      text-align: center; } }
   @media only screen and (max-width: 767px) {
     .menu-navigation-wrap .menu-navigation {
-      padding: 20px 50px 20px 20px; } }
+      padding: 45px 10px; } }
   .menu-navigation-wrap .menu-navigation li {
     padding: 0 20px; }
     @media only screen and (max-width: 767px) {
@@ -320,6 +324,12 @@ h6 {
   padding: 33px 35px 40px 40px;
   overflow-y: scroll;
   height: 350px; }
+  @media only screen and (max-width: 1023px) {
+    .slick-slide {
+      height: 330px; } }
+  @media only screen and (max-width: 767px) {
+    .slick-slide {
+      height: 280px; } }
   .slick-slide:hover {
     cursor: pointer; }
   @media only screen and (max-width: 1023px) {
@@ -350,6 +360,9 @@ h6 {
     font-weight: 400;
     height: 135px;
     overflow-y: scroll; }
+    @media only screen and (max-width: 767px) {
+      .slick-slide p {
+        height: 170px; } }
     .slick-slide p::-webkit-scrollbar {
       width: 0; }
     @media only screen and (max-width: 767px) {

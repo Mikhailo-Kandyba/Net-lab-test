@@ -31,6 +31,14 @@
   overflow-y: scroll;
   height: 350px;
 
+  @include  breakpoint($tablet) {
+    height: 330px;
+  }
+
+  @include breakpoint($mobile) {
+    height: 280px;
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -68,6 +76,10 @@
     font-weight: 400;
     height: 135px;
     overflow-y: scroll;
+
+    @include breakpoint($mobile) {
+      height: 170px;
+    }
 
     &::-webkit-scrollbar {
       width: 0;
