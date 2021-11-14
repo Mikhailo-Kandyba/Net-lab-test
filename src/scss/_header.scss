@@ -1,77 +1,8 @@
 @import "variables";
 @import "mixin";
 
-//.btn-menu {
-//  display: none;
-//  position: absolute;
-//  top: 25px;
-//  left: 0;
-//  height: 22px;
-//  width: 28px;
-//  cursor: pointer;
-//  transition: all .25s ease;
-//  z-index: 103;
-//
-//  @include breakpoint($tablet) {
-//    display: block;
-//  }
-//
-//  @include breakpoint($mobile) {
-//    height: 18px;
-//    top: 17px;
-//  }
-//
-//  span {
-//    background: #000;
-//    border: none;
-//    height: 2px;
-//    width: 100%;
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    transition: all .35s ease;
-//    cursor: pointer;
-//  }
-//
-//  .middle {
-//    transform: translate(0, -50%);
-//    top: 50%;
-//    width: 50%;
-//  }
-//
-//  .bottom {
-//    top: auto;
-//    bottom: 0;
-//  }
-//
-//  .top {
-//    bottom: 0;
-//  }
-//
-//  &.active {
-//    background: transparent;
-//    .top {
-//      transform: translateY(8px) translateX(0) rotate(45deg);
-//      top: 0;
-//
-//      @include breakpoint($mobile) {
-//        top: -4px;
-//      }
-//    }
-//
-//    .middle {
-//      opacity: 0;
-//    }
-//
-//    .bottom {
-//      bottom: 4px;
-//      transform: translateY(-8px) translateX(0) rotate(-45deg);
-//    }
-//  }
-//}
-
 .header {
-  padding: 35px 0 15px;
+  padding: 35px 0 19px;
 
   @include breakpoint($tablet) {
     padding: 0;
@@ -81,14 +12,17 @@
 .header-top {
   font-family: 'Cormorant Infant', serif;
   text-align: center;
-  border-bottom: 1px solid $lactic;
+  border-bottom: 1px solid $white-two;
   padding-bottom: 45px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 
   @include breakpoint($tablet) {
-    padding-bottom: 25px;
+    padding: 15px 0;
     margin-bottom: 0;
-    display: none;
+  }
+
+  @include breakpoint($mobile) {
+    padding: 5px 0;
   }
 
   h1 {
@@ -97,6 +31,12 @@
     color: $dark;
     font-weight: 700;
     margin-bottom: 10px;
+
+    @include breakpoint($mobile) {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 5px;
+    }
   }
 
   p {
@@ -117,26 +57,6 @@
 .menu-navigation-wrap {
   @include breakpoint($tablet) {
     background: $white;
-  }
-
-  .header-top {
-    display: none;
-
-    @include breakpoint($tablet) {
-      display: block;
-      padding-top: 25px;
-    }
-
-    @include breakpoint($mobile) {
-      padding: 45px 11px 15px;
-    }
-
-    h1 {
-      @include breakpoint($mobile) {
-        font-size: 25px;
-        line-height: 30px;
-      }
-    }
   }
 
   @include breakpoint($tablet) {
@@ -171,7 +91,7 @@
     }
 
     @include breakpoint($mobile) {
-      padding: 20px 11px;
+      padding: 20px 50px 20px 20px;
     }
 
     li {
@@ -265,8 +185,5 @@
   }
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
 
 

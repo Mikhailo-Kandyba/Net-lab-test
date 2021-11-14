@@ -21,9 +21,19 @@
   max-width: 550px;
 }
 
+.slick-slide::-webkit-scrollbar {
+  width: 0;
+}
+
 .slick-slide {
   background: $light-gray;
   padding: 33px 35px 40px 40px;
+  overflow-y: scroll;
+  height: 350px;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @include breakpoint($tablet) {
     padding: 23px 35px 20px 30px;
@@ -56,13 +66,18 @@
     line-height: 28px;
     color: $dark-grey;
     font-weight: 400;
+    height: 135px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
 
     @include breakpoint($mobile) {
       font-size: 15px;
       line-height: 25px;
     }
   }
-
 }
 
 .slick-next,
@@ -123,15 +138,11 @@
 }
 
 .actual-news {
-  max-width: 550px;
-
-  @include breakpoint($desktop) {
-    max-width: 500px;
-  }
+  width: 49%;
 
   @include breakpoint($tablet) {
-    max-width: fit-content;
     margin-bottom: 50px;
+    width: 100%;
   }
 
   @include breakpoint($mobile) {
@@ -157,8 +168,12 @@
 
 .news-block {
   background: $white;
-  padding: 25px;
-  margin-bottom: 35px;
+  padding: 25px 30px 25px 25px;
+  margin-bottom: 30px;
+
+  @include breakpoint($desktop) {
+    padding: 20px 25px 37px;
+  }
 
   @include breakpoint($mobile) {
     padding: 10px;
@@ -171,7 +186,7 @@
 
   .img-area {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     @include breakpoint($mobile) {
       margin-bottom: 10px;
@@ -185,7 +200,7 @@
     font-weight: 600;
     font-style: italic;
     font-family: 'Cormorant Infant', serif;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
 
     @include breakpoint($mobile) {
       font-size: 27px;
@@ -197,13 +212,12 @@
     font-family: 'PT Sans', sans-serif;
     color: $grey;
     font-weight: 400;
-    //height: 160px;
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 
     @include breakpoint($mobile) {
       font-size: 15px;
@@ -216,23 +230,26 @@
 .date {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 
   @include breakpoint($mobile) {
     margin-bottom: 5px;
   }
 
-  .img-are {
-    display: inline-flex;
-    width: 15px;
-    margin-right: 10px;
-  }
-
   span {
     font-family: 'PT Sans', sans-serif;
     font-size: 14px;
-    color: $grey-two;
+    color: $grey-three;
     font-weight: 400;
+    text-transform: uppercase;
+
+    &:before {
+      content: "\f073";
+      font-family: "FontAwesome";
+      margin-right: 10px;
+      font-size: 16px;
+      color: $grey-three;
+    }
   }
 }
 
@@ -240,13 +257,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   @include breakpoint($mobile) {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .btn {
+  .holder-link {
     @include breakpoint($mobile) {
       margin-bottom: 10px;
     }
@@ -259,6 +277,10 @@
   justify-content: flex-end;
   max-width: 300px;
   width: 100%;
+
+  @include breakpoint($desktop) {
+    max-width: 270px;
+  }
 
   @include breakpoint($tablet) {
     max-width: 400px;
@@ -280,52 +302,38 @@
     width:  25px;
     text-align: end;
 
+    &:hover {
+      cursor: pointer;
+
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      i {
+        color: $green-two;
+      }
+    }
+
     i {
       font-size: 21px;
     }
-    &:first-child {
-      a {
-        position: relative;
-
-        &:hover {
-          text-decoration: none;
-
-          &:after {
-            color: #47974B;
-          }
-        }
-
-        &:after {
-          content: "\f189";
-          font-family: FontAwesome;
-          color: #CCC;
-          font-size: 21px;
-        }
-      }
-    }
-  }
-
-  img {
-    width: 15px;
   }
 }
 
 .pagination-holder {
-  max-width: 555px;
-
-  @include breakpoint($desktop) {
-    max-width: 475px;
-  }
+  width: 49%;
 
   @include breakpoint($tablet) {
-    max-width: fit-content;
+    width: 100%;
   }
 }
 
 .small-holder {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 
   @include breakpoint($mobile) {
     flex-direction: column;
@@ -336,6 +344,10 @@
 .pagination {
   display: flex;
   align-items: center;
+
+  a {
+    line-height: 22px;
+  }
 
   .active {
     background: $green-three;
@@ -371,12 +383,28 @@
 
     &:first-child {
       background: transparent;
-      padding: 0;
+      padding: 15px 7px;
+      margin: 0;
+      
+      &:before {
+        content: "\f104";
+        font-family: "FontAwesome";
+        color: $lactic-three;
+        font-size: 21px;
+      }
     }
 
     &:last-child {
       background: transparent;
-      padding: 0;
+      padding: 15px 7px;
+      margin: 0;
+
+      &:before {
+        content: "\f105";
+        font-family: "FontAwesome";
+        color: $lactic-three;
+        font-size: 21px;
+      }
     }
 
     &:hover {
@@ -414,8 +442,12 @@
   background: $white;
   border-left: 1px solid $white-two;
   border-bottom: 1px solid $white-two;
-  padding: 25px 23px 17px 25px;
+  padding: 25px 22px 15px 27px;
   width: 50%;
+
+  @include breakpoint($desktop) {
+    padding: 20px 15px 15px;
+  }
 
   @include breakpoint($mobile) {
     width: 100%;
@@ -434,7 +466,7 @@
 
   .img-area {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
   }
 
   h3 {
@@ -443,7 +475,7 @@
     color: $dark;
     font-weight: 600;
     font-style: italic;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 
   p {
@@ -473,12 +505,12 @@
   background-size: cover;
   min-height: 560px;
   margin-bottom: 70px;
-  padding-bottom: 70px;
+  padding: 70px 0;
 
   @include breakpoint($tablet) {
     min-height: 310px;
-    padding-bottom: 40px;
     margin-bottom: 50px;
+    padding: 20px 0;
   }
 
   @include breakpoint($mobile) {
@@ -486,7 +518,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 0;
     margin-bottom: 20px;
   }
 }
@@ -517,7 +548,7 @@
 }
 
 .facebook-wrap {
-  margin-bottom: 70px;
+  margin-bottom: 67px;
 
   @include breakpoint($tablet) {
     margin-bottom: 50px;
@@ -540,14 +571,17 @@
 
 .facebook-news {
   background: $white;
-  max-width: 355px;
-  padding: 29px 33px 27px 34px;
+  width: 32%;
+  padding: 29px 36px 27px 34px;
+
+  @include breakpoint($tablet) {
+    width: 40%;
+  }
 
   @include breakpoint($mobile) {
     padding: 10px;
     margin-bottom: 20px;
     width: 100%;
-    max-width: 100%;
   }
 
   h3 {
@@ -570,25 +604,22 @@
   align-items: center;
   justify-content: center;
   font-family: 'Cormorant Infant', serif;
-  max-width: 745px;
-  width: 100%;
+  width: 66%;
   background: $white;
   font-size: 24px;
   color: $dark;
   font-weight: 600;
   font-style: italic;
-
-  @include breakpoint($desktop) {
-    max-width: 575px;
-  }
+  padding: 29px 36px 27px 34px;
 
   @include breakpoint($tablet) {
-    max-width: 365px;
+    width: 58%;
   }
 
   @include breakpoint($mobile) {
     max-width: 100%;
     width: 100%;
+    min-height: 230px;
   }
 }
 

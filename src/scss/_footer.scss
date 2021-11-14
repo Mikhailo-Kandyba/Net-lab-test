@@ -84,10 +84,10 @@
     color: $white;
     font-weight: 300;
     font-style: italic;
-    padding-right: 150px;
+    max-width: 275px;
 
     @include breakpoint($tablet) {
-      padding-right: 0;
+      max-width: 100%;
     }
   }
 }
@@ -97,9 +97,11 @@
   justify-content: flex-start;
   max-width: 420px;
   width: 100%;
+  padding-top: 5px;
 
   @include breakpoint($desktop) {
     max-width: min-content;
+    padding-top: 0;
   }
 }
 
@@ -114,6 +116,10 @@
     a {
       color: $white;
 
+      &:hover {
+        text-decoration: underline;
+      }
+
       @include breakpoint($mobile) {
         font-size: 15px;
         line-height: 25px;
@@ -125,6 +131,11 @@
 .holder-socials {
   max-width: 170px;
   width: 100%;
+  padding-top: 10px;
+
+  @include breakpoint($desktop) {
+    padding-top: 0;
+  }
 
   .img-area {
     display: flex;
@@ -132,12 +143,6 @@
 
     img {
       width: 90px;
-    }
-  }
-
-  .socials {
-    li {
-      width: 25px;
     }
   }
 }

@@ -1,7 +1,7 @@
 @import "mixin";
 @import "variables";
 
-.btn_green {
+.btn-green {
   background: $green-two;
   color: $white;
 
@@ -16,10 +16,52 @@
   align-items: flex-start;
 }
 
-.margin-bottom_30 {
-  margin-bottom: 30px;
+.margin-bottom-34 {
+  margin-bottom: 34px;
 
   @include breakpoint($mobile) {
     margin-bottom: 20PX;
   }
+}
+
+.vkontakte-img {
+  a {
+    &:after {
+      content: "\f189";
+      font-family: FontAwesome;
+      color: $lactic-two;
+      font-size: 21px;
+    }
+
+    &:hover {
+      &:after {
+        color: $green-two;
+      }
+    }
+  }
+}
+
+.instagram-img {
+  a {
+    &:after {
+      content: "\f16d";
+      font-family: "FontAwesome";
+      color: $lactic-two;
+      font-size: 21px;
+    }
+
+    &:hover {
+      &:after {
+        color: $green-two;
+      }
+    }
+  }
+}
+
+.btn-lg {
+  padding: 15px 33px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
