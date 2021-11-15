@@ -670,7 +670,7 @@ h6 {
       margin-right: 6px; }
       .pagination li:first-child a {
         background: transparent;
-        padding: 18px 7px 18px 5px; }
+        padding: 18px 7px; }
         @media only screen and (max-width: 767px) {
           .pagination li:first-child a {
             padding: 15px 7px; } }
@@ -688,7 +688,7 @@ h6 {
       margin-left: 6px; }
       .pagination li:last-child a {
         background: transparent;
-        padding: 18px 5px 18px 7px; }
+        padding: 18px 7px; }
         @media only screen and (max-width: 767px) {
           .pagination li:last-child a {
             padding: 15px 7px; } }
@@ -724,17 +724,13 @@ h6 {
       padding: 10px; } }
   .small-news:nth-child(odd) {
     border-left: none; }
-  @media only screen and (max-width: 1155px) {
-    .small-news:nth-child(7), .small-news:nth-child(8) {
-      border-bottom: none; } }
-  @media only screen and (max-width: 1023px) {
-    .small-news:nth-child(7), .small-news:nth-child(8) {
-      border-bottom: none; } }
-  @media only screen and (max-width: 767px) {
-    .small-news:nth-child(7), .small-news:nth-child(8) {
-      border-bottom: 1px solid #E5E5E5; }
-      .small-news:nth-child(7):last-child, .small-news:nth-child(8):last-child {
-        border-bottom: none; } }
+  .small-news:nth-child(7), .small-news:nth-child(8) {
+    border-bottom: none; }
+    @media only screen and (max-width: 767px) {
+      .small-news:nth-child(7), .small-news:nth-child(8) {
+        border-bottom: 1px solid #E5E5E5; }
+        .small-news:nth-child(7):last-child, .small-news:nth-child(8):last-child {
+          border-bottom: none; } }
   .small-news .img-area {
     display: flex;
     margin-bottom: 15px; }

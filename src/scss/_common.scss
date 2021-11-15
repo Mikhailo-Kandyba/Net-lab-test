@@ -543,13 +543,7 @@
 
   &:nth-child(7),
   &:nth-child(8) {
-    @include breakpoint($desktop) {
-      border-bottom: none;
-    }
-
-    @include breakpoint($tablet) {
-      border-bottom: none;
-    }
+    border-bottom: none;
 
     @include breakpoint($mobile) {
       border-bottom: 1px solid $white-two;
