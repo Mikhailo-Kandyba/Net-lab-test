@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid $average-grey-two;
-  padding-bottom: 55px;
+  padding-bottom: 50px;
 
   @include breakpoint($tablet) {
     flex-wrap: wrap;
@@ -94,7 +94,6 @@
 
 .footer-nav-holder {
   display: flex;
-  justify-content: flex-start;
   max-width: 420px;
   width: 100%;
   padding-top: 5px;
@@ -107,13 +106,17 @@
 
 .footer-navigation {
   font-family: 'PT Sans', sans-serif;
-  min-width: 315px;
   line-height: 34px;
   font-weight: 400;
   text-transform: uppercase;
 
+  @include breakpoint($desktop) {
+    min-width: 280px;
+  }
+
   li {
     a {
+      display: block;
       color: $white;
 
       &:hover {
@@ -135,6 +138,15 @@
 
   @include breakpoint($desktop) {
     padding-top: 0;
+  }
+
+  .socials-wrap {
+    margin-bottom: 34px;
+    align-items: flex-start;
+
+    @include breakpoint($mobile) {
+      margin-bottom: 20px;
+    }
   }
 
   .img-area {

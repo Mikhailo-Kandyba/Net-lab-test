@@ -17,7 +17,7 @@
   margin-bottom: 17px;
 
   @include breakpoint($tablet) {
-    padding: 15px 0;
+    padding: 10px 0;
     margin-bottom: 0;
   }
 
@@ -44,6 +44,10 @@
     color: $average-grey;
     font-weight: 300;
     font-style: italic;
+
+    @include breakpoint($tablet) {
+      display: none;
+    }
   }
 }
 
@@ -87,7 +91,11 @@
 
     @include breakpoint($tablet) {
       flex-direction: column;
-      padding: 45px 10px;
+      padding: 150px 15px 20px;
+    }
+
+    @include breakpoint($mobile) {
+      padding: 120px 15px 20px;
     }
 
     .active {
@@ -99,24 +107,52 @@
     li {
       padding: 0 20px;
 
+      @include breakpoint($desktop) {
+        padding: 0 10px;
+      }
+
+      @include breakpoint($tablet) {
+        padding: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        text-align: center;
+      }
+
+      @include breakpoint($mobile) {
+        margin-bottom: 5px;
+      }
+
       a {
+        padding: 15px;
+
+        @include breakpoint($tablet) {
+          display: block;
+          padding: 10px;
+        }
         @include breakpoint($mobile) {
           font-size: 15px;
           line-height: 25px;
         }
       }
 
-      @include breakpoint($tablet) {
-        padding: 0;
-        margin-bottom: 15px;
-      }
-
       &:first-child {
-        padding: 0;
+        padding-left: 0;
+
+        a {
+          padding-left: 0;
+
+          @include breakpoint($tablet) {
+            padding: 5px;
+          }
+        }
       }
 
       &:last-child {
-        padding: 0;
+        padding-right: 0;
+
+        a {
+          padding-right: 0;
+        }
       }
     }
   }

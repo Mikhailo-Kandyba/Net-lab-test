@@ -12,52 +12,6 @@
   }
 }
 
-.flex-start {
-  align-items: flex-start;
-}
-
-.margin-bottom-34 {
-  margin-bottom: 34px;
-
-  @include breakpoint($mobile) {
-    margin-bottom: 20PX;
-  }
-}
-
-.vkontakte-img {
-  a {
-    &:after {
-      content: "\f189";
-      font-family: FontAwesome;
-      color: $lactic-two;
-      font-size: 21px;
-    }
-
-    &:hover {
-      &:after {
-        color: $green-two;
-      }
-    }
-  }
-}
-
-.instagram-img {
-  a {
-    &:after {
-      content: "\f16d";
-      font-family: "FontAwesome";
-      color: $lactic-two;
-      font-size: 21px;
-    }
-
-    &:hover {
-      &:after {
-        color: $green-two;
-      }
-    }
-  }
-}
-
 .btn-lg {
   padding: 15px 33px;
 }
@@ -70,4 +24,9 @@
   @include breakpoint($tablet) {
     display: none;
   }
+}
+
+.z-index-50 {
+  position: relative;
+  z-index: 50;
 }

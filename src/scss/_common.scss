@@ -127,45 +127,65 @@
   }
 }
 
-.news-wrap {
-  margin-bottom: 70px;
-
-  @include breakpoint($tablet) {
-    margin-bottom: 50px;
-  }
-
-  @include breakpoint($mobile) {
-    margin-bottom: 20px;
-  }
-}
-
 .news-content {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 70px;
 
   @include breakpoint($tablet) {
     flex-direction: column;
     justify-content: center;
-  }
-}
-
-.actual-news {
-  width: 49%;
-
-  @include breakpoint($tablet) {
     margin-bottom: 50px;
-    width: 100%;
   }
 
   @include breakpoint($mobile) {
     margin-bottom: 20px;
   }
+}
 
+.actual-news {
+  @include breakpoint($tablet) {
+    margin-bottom: 30px;
+  }
   .btn-holder {
     margin-left: 25px;
 
     @include breakpoint($mobile) {
       margin-left: 0;
+    }
+
+    .btn {
+      @include breakpoint($mobile) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0 15px;
+
+    &:first-child {
+      padding-left: 0;
+
+      @include breakpoint($tablet) {
+        padding: 0;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      @include breakpoint($tablet) {
+        padding: 0;
+      }
     }
   }
 }
@@ -185,6 +205,7 @@
 
   @include breakpoint($desktop) {
     padding: 20px 25px 37px;
+    margin-bottom: 53px;
   }
 
   @include breakpoint($mobile) {
@@ -198,7 +219,7 @@
 
   .img-area {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 
     @include breakpoint($mobile) {
       margin-bottom: 10px;
@@ -240,32 +261,29 @@
 }
 
 .date {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  color: $grey-three;
+  font-weight: 400;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 
+  &:before {
+    content: "\f073";
+    font-family: "FontAwesome";
+    margin-right: 10px;
+    font-size: 16px;
+    color: $grey-three;
+  }
+
   @include breakpoint($mobile) {
     margin-bottom: 5px;
   }
-
-  span {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 14px;
-    color: $grey-three;
-    font-weight: 400;
-    text-transform: uppercase;
-
-    &:before {
-      content: "\f073";
-      font-family: "FontAwesome";
-      margin-right: 10px;
-      font-size: 16px;
-      color: $grey-three;
-    }
-  }
 }
 
-.btn-socials {
+.btn-and-socials {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -276,9 +294,10 @@
     align-items: flex-start;
   }
 
-  .holder-link {
+  .btn {
     @include breakpoint($mobile) {
       margin-bottom: 10px;
+      width: 100%;
     }
   }
 }
@@ -295,11 +314,11 @@
   }
 
   @include breakpoint($tablet) {
-    max-width: 400px;
+    max-width: inherit;
   }
 
   @include breakpoint($mobile) {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
@@ -334,22 +353,14 @@
   }
 }
 
-.pagination-holder {
-  width: 49%;
-
-  @include breakpoint($tablet) {
-    width: 100%;
-  }
-}
-
 .small-holder {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 23px;
+  margin-bottom: 38px;
 
   @include breakpoint($mobile) {
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 }
 
@@ -357,91 +368,115 @@
   display: flex;
   align-items: center;
 
+  @include breakpoint($mobile) {
+    margin-bottom: 10px;
+  }
+
   a {
     line-height: 22px;
+    padding: 18px 22px;
+
+    @include breakpoint($mobile) {
+      padding: 15px;
+    }
+
+    &:hover {
+      background: $green-three;
+      color: $white;
+    }
   }
 
   .active {
-    background: $green-three;
-
     a {
+      background: $green-three;
       color: $white;
     }
   }
 
   .to-uncover {
-    padding: 0;
-    background: transparent;
-
-    &:hover {
+    margin: 0;
+    
+    a {
+      padding: 18px 5px;
       background: transparent;
 
-      a {
+      &:after {
+        content: "\f141";
+        font-family: "FontAwesome";
+        font-size: 13px;
+        color: $dark-grey;
+      }
+
+      &:hover {
+        background: transparent;
         color: $dark;
+        
+        &:after {
+          color: $green-three;
+        }
       }
     }
   }
 
   li {
     margin: 0 7px;
-    padding: 15px 22px;
-    transition: background-color .3s;
-    background: $white;
 
     @include breakpoint($mobile) {
-      padding: 5px 15px;
-      margin: 0 4px;
+      margin: 0 2px;
     }
 
     &:first-child {
-      background: transparent;
-      padding: 15px 7px;
       margin: 0;
-      
-      &:before {
-        content: "\f104";
-        font-family: "FontAwesome";
-        color: $lactic-three;
-        font-size: 21px;
+      a {
+        padding: 18px 15px 18px 7px;
+
+        @include breakpoint($mobile) {
+          padding: 15px 7px;
+        }
+
+        &:hover {
+          background: transparent;
+        }
+
+        &:before {
+          content: "\f104";
+          font-family: "FontAwesome";
+          color: $lactic-three;
+          font-size: 21px;
+        }
+
+        &:hover {
+          &:before {
+            color: $green-three;
+          }
+        }
       }
     }
 
     &:last-child {
-      background: transparent;
-      padding: 15px 7px;
       margin: 0;
-
-      &:before {
-        content: "\f105";
-        font-family: "FontAwesome";
-        color: $lactic-three;
-        font-size: 21px;
-      }
-    }
-
-    &:hover {
-      background: $green-three;
-      cursor: pointer;
-
-      &:first-child {
-        background: transparent;
-
-        a {
-          color: $dark;
-        }
-      }
-
-      &:last-child {
-        background: transparent;
-
-        a {
-          color: $dark;
-        }
-      }
-
       a {
-        color: $white;
-        text-decoration: none;
+        padding: 18px 7px 18px 7px;
+
+        @include breakpoint($mobile) {
+          padding: 15px 7px;
+        }
+
+        &:hover {
+          background: transparent;
+        }
+        &:before {
+          content: "\f105";
+          font-family: "FontAwesome";
+          color: $lactic-three;
+          font-size: 21px;
+        }
+
+        &:hover {
+          &:before {
+            color: $green-three;
+          }
+        }
       }
     }
   }
@@ -454,7 +489,7 @@
   background: $white;
   border-left: 1px solid $white-two;
   border-bottom: 1px solid $white-two;
-  padding: 25px 22px 15px 27px;
+  padding: 25px 26px 14px 27px;
   width: 50%;
 
   @include breakpoint($desktop) {
@@ -478,7 +513,7 @@
 
   .img-area {
     display: flex;
-    margin-bottom: 13px;
+    margin-bottom: 15px;
   }
 
   h3 {
@@ -494,7 +529,7 @@
     font-family: 'PT Sans', sans-serif;
     color: $grey;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;

@@ -12,6 +12,7 @@
   padding: 15px 38px;
   text-transform: uppercase;
   color: $light-green;
+  text-align: center;
 
   @include breakpoint($mobile) {
     padding: 10px 30px;
@@ -42,16 +43,9 @@
   }
 }
 
-.link-holder {
-  display: flex;
-  align-items: center;
-
-  &:before {
-    content: "\f138";
-    font-family: "FontAwesome";
-    color: $light-green;
-    font-size: 18px;
-    padding-right: 10px;
+.small-news {
+  .link-btn {
+    padding: 5px 10px 5px 25px;
   }
 }
 
@@ -64,6 +58,17 @@
   color: $light-green;
   font-weight: 700;
   text-transform: uppercase;
+  position: relative;
+
+  &:before {
+    content: "\f138";
+    font-family: "FontAwesome";
+    color: $light-green;
+    font-size: 18px;
+    padding-right: 10px;
+    position: absolute;
+    left: 0;
+  }
 
   &:hover {
     text-decoration: underline;
