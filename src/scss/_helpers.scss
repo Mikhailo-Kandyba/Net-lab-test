@@ -67,5 +67,7 @@
 }
 
 .display-none {
-  display: none;
+  @include breakpoint($tablet) {
+    display: none;
+  }
 }

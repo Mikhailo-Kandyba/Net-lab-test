@@ -90,6 +90,12 @@
       padding: 45px 10px;
     }
 
+    .active {
+      a {
+        color: $light-green;
+      }
+    }
+
     li {
       padding: 0 20px;
 

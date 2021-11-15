@@ -231,6 +231,8 @@ h6 {
     .menu-navigation-wrap .menu-navigation {
       flex-direction: column;
       padding: 45px 10px; } }
+  .menu-navigation-wrap .menu-navigation .active a {
+    color: #48974C; }
   .menu-navigation-wrap .menu-navigation li {
     padding: 0 20px; }
     @media only screen and (max-width: 767px) {
@@ -922,5 +924,6 @@ h6 {
 .overflow-hidden {
   overflow: hidden; }
 
-.display-none {
-  display: none; }
+@media only screen and (max-width: 1023px) {
+  .display-none {
+    display: none; } }
