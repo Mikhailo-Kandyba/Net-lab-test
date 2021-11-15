@@ -30,3 +30,17 @@
   position: relative;
   z-index: 50;
 }
+
+.link-md {
+  a {
+    padding: 18px 19px;
+
+    @include breakpoint($tablet) {
+      padding: 18px 15px;
+    }
+
+    @include breakpoint($mobile) {
+      padding: 15px 12px;
+    }
+  }
+}

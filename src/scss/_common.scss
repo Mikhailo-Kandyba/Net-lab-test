@@ -130,12 +130,12 @@
 .news-content {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 70px;
+  margin: 0 -15px 60px;
 
   @include breakpoint($tablet) {
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 50px;
+    margin: 0 -10px 20px;
   }
 
   @include breakpoint($mobile) {
@@ -150,7 +150,7 @@
   .btn-holder {
     margin-left: 25px;
 
-    @include breakpoint($mobile) {
+    @include breakpoint($tablet) {
       margin-left: 0;
     }
 
@@ -167,25 +167,15 @@
   flex-wrap: wrap;
 
   .col {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
+    width: 50%;
     padding: 0 15px;
 
-    &:first-child {
-      padding-left: 0;
-
-      @include breakpoint($tablet) {
-        padding: 0;
-      }
+    @include breakpoint($desktop) {
+      padding: 0 10px;
     }
 
-    &:last-child {
-      padding-right: 0;
-
-      @include breakpoint($tablet) {
-        padding: 0;
-      }
+    @include breakpoint($mobile) {
+      width: 100%;
     }
   }
 }
@@ -200,12 +190,12 @@
 
 .news-block {
   background: $white;
-  padding: 25px 30px 25px 25px;
-  margin-bottom: 30px;
+  padding: 25px 30px 15px 25px;
+  margin-bottom: 52px;
 
   @include breakpoint($desktop) {
-    padding: 20px 25px 37px;
-    margin-bottom: 53px;
+    padding: 15px;
+    margin-bottom: 42px;
   }
 
   @include breakpoint($mobile) {
@@ -291,10 +281,26 @@
 
   @include breakpoint($mobile) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .socials-wrap {
+    @include breakpoint($mobile) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .socials {
+    @include breakpoint($mobile) {
+      min-width: 100%;
+    }
   }
 
   .btn {
+    @include breakpoint($tablet) {
+      margin-bottom: 10px;
+    }
     @include breakpoint($mobile) {
       margin-bottom: 10px;
       width: 100%;
@@ -315,6 +321,7 @@
 
   @include breakpoint($tablet) {
     max-width: inherit;
+    width: auto;
   }
 
   @include breakpoint($mobile) {
@@ -330,8 +337,12 @@
   flex-wrap: wrap;
 
   li {
-    width:  25px;
     text-align: end;
+
+    a {
+      padding: 8px;
+      display: block;
+    }
 
     &:hover {
       cursor: pointer;
@@ -356,11 +367,19 @@
 .small-holder {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 38px;
+  margin-bottom: 22px;
 
   @include breakpoint($mobile) {
     flex-direction: column;
     margin-bottom: 25px;
+  }
+}
+
+.pagination-wrap {
+  @include breakpoint($tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -373,8 +392,14 @@
   }
 
   a {
+    display: block;
     line-height: 22px;
-    padding: 18px 22px;
+    padding: 18px 24px;
+    background: $white;
+
+    @include breakpoint($tablet) {
+      padding: 18px;
+    }
 
     @include breakpoint($mobile) {
       padding: 15px;
@@ -419,7 +444,7 @@
   }
 
   li {
-    margin: 0 7px;
+    margin: 0 5px;
 
     @include breakpoint($mobile) {
       margin: 0 2px;
@@ -427,8 +452,11 @@
 
     &:first-child {
       margin: 0;
+      margin-right: 6px;
+
       a {
-        padding: 18px 15px 18px 7px;
+        background: transparent;
+        padding: 18px 7px 18px 5px;
 
         @include breakpoint($mobile) {
           padding: 15px 7px;
@@ -455,8 +483,11 @@
 
     &:last-child {
       margin: 0;
+      margin-left: 6px;
+
       a {
-        padding: 18px 7px 18px 7px;
+        background: transparent;
+        padding: 18px 5px 18px 7px;
 
         @include breakpoint($mobile) {
           padding: 15px 7px;
@@ -493,7 +524,11 @@
   width: 50%;
 
   @include breakpoint($desktop) {
-    padding: 20px 15px 15px;
+    padding: 15px;
+  }
+
+  @include breakpoint($tablet) {
+    padding: 15px 10px 10px;
   }
 
   @include breakpoint($mobile) {
@@ -505,9 +540,24 @@
   &:nth-child(odd) {
     border-left: none;
   }
+
   &:nth-child(7),
   &:nth-child(8) {
-    border-bottom: 0;
+    @include breakpoint($desktop) {
+      border-bottom: none;
+    }
+
+    @include breakpoint($tablet) {
+      border-bottom: none;
+    }
+
+    @include breakpoint($mobile) {
+      border-bottom: 1px solid $white-two;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
 
 
@@ -523,6 +573,10 @@
     font-weight: 600;
     font-style: italic;
     margin-bottom: 8px;
+
+    @include breakpoint($tablet) {
+      font-size: 22px;
+    }
   }
 
   p {

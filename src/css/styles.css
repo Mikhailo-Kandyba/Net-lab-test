@@ -159,10 +159,12 @@ h6 {
     position: absolute;
     left: 0; }
   .link-btn:hover {
-    text-decoration: underline; }
+    color: #365c38; }
+    .link-btn:hover:before {
+      color: #365c38; }
 
 .header {
-  padding: 35px 0 19px; }
+  padding: 35px 0 7px; }
   @media only screen and (max-width: 1023px) {
     .header {
       padding: 0; } }
@@ -172,14 +174,21 @@ h6 {
   text-align: center;
   border-bottom: 1px solid #E5E5E5;
   padding-bottom: 45px;
-  margin-bottom: 17px; }
+  margin-bottom: 5px; }
   @media only screen and (max-width: 1023px) {
     .header-top {
       padding: 10px 0;
       margin-bottom: 0; } }
   @media only screen and (max-width: 767px) {
     .header-top {
-      padding: 5px 0; } }
+      padding: 5px 0;
+      padding-right: 30px;
+      text-align: left;
+      position: relative; } }
+  @media only screen and (max-width: 767px) {
+    .header-top .btn-menu {
+      display: block;
+      top: 9px; } }
   .header-top h1 {
     font-size: 36px;
     line-height: 36px;
@@ -196,7 +205,7 @@ h6 {
     color: #595959;
     font-weight: 300;
     font-style: italic; }
-    @media only screen and (max-width: 1023px) {
+    @media only screen and (max-width: 767px) {
       .header-top p {
         display: none; } }
 
@@ -205,10 +214,18 @@ h6 {
     position: relative;
     padding: 25px 0; } }
 
+@media only screen and (max-width: 767px) {
+  .header-bottom {
+    padding: 0; } }
+
+@media only screen and (max-width: 767px) {
+  .header-bottom .btn-menu {
+    display: none; } }
+
 .menu-navigation-wrap .header-top {
   display: none; }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 767px) {
   .menu-navigation-wrap {
     position: fixed;
     z-index: 25;
@@ -233,13 +250,10 @@ h6 {
   @media only screen and (max-width: 1155px) {
     .menu-navigation-wrap .menu-navigation {
       padding: 0; } }
-  @media only screen and (max-width: 1023px) {
-    .menu-navigation-wrap .menu-navigation {
-      flex-direction: column;
-      padding: 150px 15px 20px; } }
   @media only screen and (max-width: 767px) {
     .menu-navigation-wrap .menu-navigation {
-      padding: 120px 15px 20px; } }
+      flex-direction: column;
+      padding: 40px 15px 20px; } }
   .menu-navigation-wrap .menu-navigation .active a {
     color: #48974C; }
   .menu-navigation-wrap .menu-navigation li {
@@ -249,19 +263,23 @@ h6 {
         padding: 0 10px; } }
     @media only screen and (max-width: 1023px) {
       .menu-navigation-wrap .menu-navigation li {
-        padding: 0;
-        margin-bottom: 15px;
-        width: 100%;
-        text-align: center; } }
+        padding: 2px; } }
     @media only screen and (max-width: 767px) {
       .menu-navigation-wrap .menu-navigation li {
-        margin-bottom: 5px; } }
+        padding: 0; } }
+    @media only screen and (max-width: 767px) {
+      .menu-navigation-wrap .menu-navigation li {
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: center; } }
     .menu-navigation-wrap .menu-navigation li a {
-      padding: 15px; }
+      display: block;
+      padding: 12px; }
       @media only screen and (max-width: 1023px) {
         .menu-navigation-wrap .menu-navigation li a {
           display: block;
-          padding: 10px; } }
+          padding: 5px 0;
+          font-size: 15px; } }
       @media only screen and (max-width: 767px) {
         .menu-navigation-wrap .menu-navigation li a {
           font-size: 15px;
@@ -270,15 +288,12 @@ h6 {
       padding-left: 0; }
       .menu-navigation-wrap .menu-navigation li:first-child a {
         padding-left: 0; }
-        @media only screen and (max-width: 1023px) {
-          .menu-navigation-wrap .menu-navigation li:first-child a {
-            padding: 5px; } }
     .menu-navigation-wrap .menu-navigation li:last-child {
       padding-right: 0; }
       .menu-navigation-wrap .menu-navigation li:last-child a {
         padding-right: 0; }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 767px) {
   .show-menu {
     right: 0; } }
 
@@ -292,7 +307,7 @@ h6 {
   cursor: pointer;
   transition: all .25s ease;
   z-index: 103; }
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: 767px) {
     .btn-menu {
       display: block; } }
   .btn-menu span {
@@ -422,12 +437,12 @@ h6 {
 .news-content {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 70px; }
+  margin: 0 -15px 60px; }
   @media only screen and (max-width: 1023px) {
     .news-content {
       flex-direction: column;
       justify-content: center;
-      margin-bottom: 50px; } }
+      margin: 0 -10px 20px; } }
   @media only screen and (max-width: 767px) {
     .news-content {
       margin-bottom: 20px; } }
@@ -438,7 +453,7 @@ h6 {
 
 .actual-news .btn-holder {
   margin-left: 25px; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 1023px) {
     .actual-news .btn-holder {
       margin-left: 0; } }
   @media only screen and (max-width: 767px) {
@@ -449,20 +464,14 @@ h6 {
   display: flex;
   flex-wrap: wrap; }
   .row .col {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
+    width: 50%;
     padding: 0 15px; }
-    .row .col:first-child {
-      padding-left: 0; }
-      @media only screen and (max-width: 1023px) {
-        .row .col:first-child {
-          padding: 0; } }
-    .row .col:last-child {
-      padding-right: 0; }
-      @media only screen and (max-width: 1023px) {
-        .row .col:last-child {
-          padding: 0; } }
+    @media only screen and (max-width: 1155px) {
+      .row .col {
+        padding: 0 10px; } }
+    @media only screen and (max-width: 767px) {
+      .row .col {
+        width: 100%; } }
 
 .news-block-holder {
   margin-bottom: 25px; }
@@ -472,12 +481,12 @@ h6 {
 
 .news-block {
   background: #fff;
-  padding: 25px 30px 25px 25px;
-  margin-bottom: 30px; }
+  padding: 25px 30px 15px 25px;
+  margin-bottom: 52px; }
   @media only screen and (max-width: 1155px) {
     .news-block {
-      padding: 20px 25px 37px;
-      margin-bottom: 53px; } }
+      padding: 15px;
+      margin-bottom: 42px; } }
   @media only screen and (max-width: 767px) {
     .news-block {
       padding: 10px;
@@ -545,7 +554,17 @@ h6 {
   @media only screen and (max-width: 767px) {
     .btn-and-socials {
       flex-direction: column;
-      align-items: flex-start; } }
+      align-items: center; } }
+  @media only screen and (max-width: 767px) {
+    .btn-and-socials .socials-wrap {
+      max-width: 100%;
+      width: 100%; } }
+  @media only screen and (max-width: 767px) {
+    .btn-and-socials .socials {
+      min-width: 100%; } }
+  @media only screen and (max-width: 1023px) {
+    .btn-and-socials .btn {
+      margin-bottom: 10px; } }
   @media only screen and (max-width: 767px) {
     .btn-and-socials .btn {
       margin-bottom: 10px;
@@ -562,7 +581,8 @@ h6 {
       max-width: 270px; } }
   @media only screen and (max-width: 1023px) {
     .socials-wrap {
-      max-width: inherit; } }
+      max-width: inherit;
+      width: auto; } }
   @media only screen and (max-width: 767px) {
     .socials-wrap {
       justify-content: center; } }
@@ -574,8 +594,10 @@ h6 {
   min-width: 170px;
   flex-wrap: wrap; }
   .socials li {
-    width: 25px;
     text-align: end; }
+    .socials li a {
+      padding: 8px;
+      display: block; }
     .socials li:hover {
       cursor: pointer; }
       .socials li:hover a:hover {
@@ -588,11 +610,17 @@ h6 {
 .small-holder {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 38px; }
+  margin-bottom: 22px; }
   @media only screen and (max-width: 767px) {
     .small-holder {
       flex-direction: column;
       margin-bottom: 25px; } }
+
+@media only screen and (max-width: 1023px) {
+  .pagination-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
 
 .pagination {
   display: flex;
@@ -601,8 +629,13 @@ h6 {
     .pagination {
       margin-bottom: 10px; } }
   .pagination a {
+    display: block;
     line-height: 22px;
-    padding: 18px 22px; }
+    padding: 18px 24px;
+    background: #fff; }
+    @media only screen and (max-width: 1023px) {
+      .pagination a {
+        padding: 18px; } }
     @media only screen and (max-width: 767px) {
       .pagination a {
         padding: 15px; } }
@@ -628,14 +661,16 @@ h6 {
         .pagination .to-uncover a:hover:after {
           color: #439553; }
   .pagination li {
-    margin: 0 7px; }
+    margin: 0 5px; }
     @media only screen and (max-width: 767px) {
       .pagination li {
         margin: 0 2px; } }
     .pagination li:first-child {
-      margin: 0; }
+      margin: 0;
+      margin-right: 6px; }
       .pagination li:first-child a {
-        padding: 18px 15px 18px 7px; }
+        background: transparent;
+        padding: 18px 7px 18px 5px; }
         @media only screen and (max-width: 767px) {
           .pagination li:first-child a {
             padding: 15px 7px; } }
@@ -649,9 +684,11 @@ h6 {
         .pagination li:first-child a:hover:before {
           color: #439553; }
     .pagination li:last-child {
-      margin: 0; }
+      margin: 0;
+      margin-left: 6px; }
       .pagination li:last-child a {
-        padding: 18px 7px 18px 7px; }
+        background: transparent;
+        padding: 18px 5px 18px 7px; }
         @media only screen and (max-width: 767px) {
           .pagination li:last-child a {
             padding: 15px 7px; } }
@@ -676,7 +713,10 @@ h6 {
   width: 50%; }
   @media only screen and (max-width: 1155px) {
     .small-news {
-      padding: 20px 15px 15px; } }
+      padding: 15px; } }
+  @media only screen and (max-width: 1023px) {
+    .small-news {
+      padding: 15px 10px 10px; } }
   @media only screen and (max-width: 767px) {
     .small-news {
       width: 100%;
@@ -684,8 +724,17 @@ h6 {
       padding: 10px; } }
   .small-news:nth-child(odd) {
     border-left: none; }
-  .small-news:nth-child(7), .small-news:nth-child(8) {
-    border-bottom: 0; }
+  @media only screen and (max-width: 1155px) {
+    .small-news:nth-child(7), .small-news:nth-child(8) {
+      border-bottom: none; } }
+  @media only screen and (max-width: 1023px) {
+    .small-news:nth-child(7), .small-news:nth-child(8) {
+      border-bottom: none; } }
+  @media only screen and (max-width: 767px) {
+    .small-news:nth-child(7), .small-news:nth-child(8) {
+      border-bottom: 1px solid #E5E5E5; }
+      .small-news:nth-child(7):last-child, .small-news:nth-child(8):last-child {
+        border-bottom: none; } }
   .small-news .img-area {
     display: flex;
     margin-bottom: 15px; }
@@ -696,6 +745,9 @@ h6 {
     font-weight: 600;
     font-style: italic;
     margin-bottom: 8px; }
+    @media only screen and (max-width: 1023px) {
+      .small-news h3 {
+        font-size: 22px; } }
   .small-news p {
     font-family: 'PT Sans', sans-serif;
     color: #737373;
@@ -837,7 +889,8 @@ h6 {
       padding-bottom: 30px; } }
   @media only screen and (max-width: 767px) {
     .footer-content {
-      padding-bottom: 20PX; } }
+      padding-bottom: 20px;
+      justify-content: center; } }
 
 .text-nav-wrap {
   display: flex;
@@ -866,7 +919,9 @@ h6 {
       max-width: 420px; } }
   @media only screen and (max-width: 767px) {
     .text-footer {
-      margin-bottom: 20px; } }
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: 100%; } }
   .text-footer h1 {
     font-size: 36px;
     line-height: 44px;
@@ -896,6 +951,9 @@ h6 {
     .footer-nav-holder {
       max-width: min-content;
       padding-top: 0; } }
+  @media only screen and (max-width: 767px) {
+    .footer-nav-holder {
+      max-width: 100%; } }
 
 .footer-navigation {
   font-family: 'PT Sans', sans-serif;
@@ -905,15 +963,27 @@ h6 {
   @media only screen and (max-width: 1155px) {
     .footer-navigation {
       min-width: 280px; } }
-  .footer-navigation li a {
-    display: block;
-    color: #fff; }
-    .footer-navigation li a:hover {
-      text-decoration: underline; }
+  @media only screen and (max-width: 767px) {
+    .footer-navigation {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }
+  .footer-navigation li {
+    width: 100%; }
     @media only screen and (max-width: 767px) {
-      .footer-navigation li a {
-        font-size: 15px;
-        line-height: 25px; } }
+      .footer-navigation li {
+        text-align: center; } }
+    .footer-navigation li a {
+      display: block;
+      color: #fff; }
+      .footer-navigation li a:hover {
+        text-decoration: underline; }
+      @media only screen and (max-width: 767px) {
+        .footer-navigation li a {
+          font-size: 15px;
+          line-height: 25px;
+          padding: 5px; } }
 
 .holder-socials {
   max-width: 170px;
@@ -922,12 +992,30 @@ h6 {
   @media only screen and (max-width: 1155px) {
     .holder-socials {
       padding-top: 0; } }
+  @media only screen and (max-width: 767px) {
+    .holder-socials {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }
   .holder-socials .socials-wrap {
     margin-bottom: 34px;
     align-items: flex-start; }
     @media only screen and (max-width: 767px) {
       .holder-socials .socials-wrap {
-        margin-bottom: 20px; } }
+        margin-bottom: 20px;
+        max-width: 285px;
+        width: 100%; } }
+  @media only screen and (max-width: 767px) {
+    .holder-socials .socials {
+      min-width: 100%;
+      flex-wrap: inherit; } }
+  @media only screen and (max-width: 767px) {
+    .holder-socials .socials li {
+      text-align: center; } }
+  @media only screen and (max-width: 767px) {
+    .holder-socials .socials li a {
+      padding: 10px; } }
   .holder-socials .img-area {
     display: flex;
     justify-content: flex-end; }
@@ -941,6 +1029,9 @@ h6 {
   color: #999;
   font-weight: 400;
   padding: 10px 0; }
+  @media only screen and (max-width: 767px) {
+    .copyright {
+      text-align: center; } }
 
 .btn-green {
   background: #47974B;
@@ -963,3 +1054,12 @@ h6 {
 .z-index-50 {
   position: relative;
   z-index: 50; }
+
+.link-md a {
+  padding: 18px 19px; }
+  @media only screen and (max-width: 1023px) {
+    .link-md a {
+      padding: 18px 15px; } }
+  @media only screen and (max-width: 767px) {
+    .link-md a {
+      padding: 15px 12px; } }

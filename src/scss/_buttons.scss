@@ -71,6 +71,10 @@
   }
 
   &:hover {
-    text-decoration: underline;
+    color: $dark-green;
+
+    &:before {
+      color: $dark-green;
+    }
   }
 }

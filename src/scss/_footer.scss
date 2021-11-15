@@ -26,7 +26,8 @@
   }
 
   @include breakpoint($mobile) {
-    padding-bottom: 20PX;
+    padding-bottom: 20px;
+    justify-content: center;
   }
 }
 
@@ -64,6 +65,8 @@
 
   @include breakpoint($mobile) {
     margin-bottom: 20px;
+    text-align: center;
+    max-width: 100%;
   }
 
   h1 {
@@ -102,6 +105,10 @@
     max-width: min-content;
     padding-top: 0;
   }
+
+  @include breakpoint($mobile) {
+    max-width: 100%;
+  }
 }
 
 .footer-navigation {
@@ -114,7 +121,20 @@
     min-width: 280px;
   }
 
+  @include breakpoint($mobile) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   li {
+    width: 100%;
+
+    @include breakpoint($mobile) {
+      text-align: center;
+    }
+
     a {
       display: block;
       color: $white;
@@ -126,6 +146,7 @@
       @include breakpoint($mobile) {
         font-size: 15px;
         line-height: 25px;
+        padding: 5px;
       }
     }
   }
@@ -140,12 +161,40 @@
     padding-top: 0;
   }
 
+  @include breakpoint($mobile) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .socials-wrap {
     margin-bottom: 34px;
     align-items: flex-start;
 
     @include breakpoint($mobile) {
       margin-bottom: 20px;
+      max-width: 285px;
+      width: 100%;
+    }
+  }
+
+  .socials {
+    @include breakpoint($mobile) {
+      min-width: 100%;
+      flex-wrap: inherit;
+    }
+
+    li {
+      @include breakpoint($mobile) {
+        text-align: center;
+      }
+
+      a {
+        @include breakpoint($mobile) {
+          padding: 10px;
+        }
+      }
     }
   }
 
@@ -166,4 +215,8 @@
   color: $grey-two;
   font-weight: 400;
   padding: 10px 0;
+
+  @include breakpoint($mobile) {
+    text-align: center;
+  }
 }
