@@ -3,6 +3,7 @@
 
 .header {
   padding: 35px 0 7px;
+  background: $white;
 
   @include breakpoint($tablet) {
     padding: 0;
